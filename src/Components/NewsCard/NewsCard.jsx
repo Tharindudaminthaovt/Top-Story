@@ -5,8 +5,8 @@ import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import useFetchData from "../../Utils/useFetchData.jsx";
-import { useContext } from "react";
-import { SearchVal } from "../SearchBar/SearchBar.jsx";
+import { useContext } from 'react';
+import { SearchContext } from '../../context/SearchContext';
 
 const StyledImage = styled("img")({
   width: "100%",
@@ -18,8 +18,8 @@ const StyledImage = styled("img")({
 const NewsCard = () => {
   const { news, loading, error } = useFetchData();
 
-  const search = useContext(SearchVal);
-console.log(search)
+  const { search } = useContext(SearchContext);
+
   if (loading)
     return (
       <Box

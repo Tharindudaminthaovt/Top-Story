@@ -3,11 +3,13 @@ import BodyContent from "./Components/BodyContent/BodyContent";
 import FooterContent from "./Components/FooterContent/FooterContent";
 import HeaderContent from "./Components/HeaderContent/HeaderContent";
 import NewsCard from "./Components/NewsCard/NewsCard";
+import { SearchProvider } from './context/SearchContext';
 import "./App.css";
 
 function App() {
   return (
     <>
+     <SearchProvider>
       <HeaderContent />
       <BodyContent>
         <Container sx={{ marginY: 5 }}>
@@ -17,6 +19,7 @@ function App() {
         </Container>
         <FooterContent />
       </BodyContent>
+      </SearchProvider>
     </>
   );
 }
